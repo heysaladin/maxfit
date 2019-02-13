@@ -95,9 +95,10 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
         controller: controller,
         children: <Widget>[
           new komputer.Komputer(),
+          new hp.Smartphone(),
           new headset.Headset(),
+          //data: new List<String>.generate(300, (i)=>"Ini data ke ${i+1}"),
           new radio.Radio(),
-          // new hp.Smartphone(),
         ],
       ),
       bottomNavigationBar: new Material(
@@ -109,14 +110,14 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
               icon: new Icon(Icons.computer),
             ),
             new Tab(
+              icon: new Icon(Icons.smartphone),
+            ),
+            new Tab(
               icon: new Icon(Icons.headset),
             ),
             new Tab(
               icon: new Icon(Icons.radio),
             ),
-            // new Tab(
-            //   icon: new Icon(Icons.smartphone),
-            // ),
           ],
         ),
       ),
