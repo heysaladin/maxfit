@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 //import 'package:maxfit/routes.dart';
 
-import './hal_komputer.dart' as komputer;
-import './hal_headset.dart' as headset;
-import './hal_radio.dart' as radio;
-import './hal_smartphone.dart' as hp;
+import './pages/page_home.dart' as home;
+import './pages/page_plan.dart' as plan;
+import './pages/page_track.dart' as track;
+import './pages/page_analytic.dart' as analytic;
 
 // void main() => runApp(new MyApp());
 
@@ -26,7 +26,7 @@ import './hal_smartphone.dart' as hp;
 void main() {
   runApp(new MaterialApp(
     debugShowCheckedModeBanner: false,
-    title: "App Belajar Flutter",
+    title: "MAXFIT",
     // home: new BelajarListView(),
     home: new Home(),
     //home: new BelajarNav(),
@@ -94,29 +94,30 @@ class _HomeState extends State<Home> with SingleTickerProviderStateMixin {
       body: new TabBarView(
         controller: controller,
         children: <Widget>[
-          new komputer.Komputer(),
-          new hp.Smartphone(),
-          new headset.Headset(),
+          new home.Home(),
+          new plan.Plan(),
+          new track.Track(),
           //data: new List<String>.generate(300, (i)=>"Ini data ke ${i+1}"),
-          new radio.Radio(),
+          new analytic.Analytic(),
         ],
       ),
       bottomNavigationBar: new Material(
-        color: Colors.amber,
+        color: Colors.white,
+        elevation: 25.0,
         child: new TabBar(
           controller: controller,
           tabs: <Widget>[
             new Tab(
-              icon: new Icon(Icons.computer),
+              icon: new Icon(Icons.home, color: Colors.grey,),
             ),
             new Tab(
-              icon: new Icon(Icons.smartphone),
+              icon: new Icon(Icons.description, color: Colors.grey,),
             ),
             new Tab(
-              icon: new Icon(Icons.headset),
+              icon: new Icon(Icons.assignment, color: Colors.grey,),
             ),
             new Tab(
-              icon: new Icon(Icons.radio),
+              icon: new Icon(Icons.insert_chart, color: Colors.grey,),
             ),
           ],
         ),
