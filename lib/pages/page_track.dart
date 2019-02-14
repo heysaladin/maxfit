@@ -24,12 +24,12 @@ import 'dart:convert';
 //   }
 // }
 
-class Headset extends StatefulWidget {
+class Track extends StatefulWidget {
   @override
-  _HeadsetState createState() => new _HeadsetState(); 
+  _TrackState createState() => new _TrackState(); 
 }
 
-class _HeadsetState extends State<Headset> {
+class _TrackState extends State<Track> {
   List dataJSON;
   Future<String> ambildata() async {
     http.Response hasil = await http.get(
@@ -38,19 +38,25 @@ class _HeadsetState extends State<Headset> {
         "Accept": "application/json"
       }
     );
+    if (this.mounted){
     this.setState((){
       dataJSON = json.decode(hasil.body);
     });
+    }
+    return 'async data';
   }
   @override
   void initState() {
-    // TODO: implement initState
     this.ambildata();
     super.initState();
   }
   @override
+  void dispose() {
+    // dataJSON.dispose();
+    super.dispose();
+  }
+  @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Container(
       child: new ListView.builder(
         itemCount: dataJSON == null ? 0 : dataJSON.length,
