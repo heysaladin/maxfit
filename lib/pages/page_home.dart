@@ -128,7 +128,7 @@ class Home extends StatelessWidget {
                                       size: 55.0,
                                     ),
                                   ),
-                                  new Text("Lifting")
+                                  new Text("Cardiovascular")
                                 ],
                               ),
                             ),
@@ -150,7 +150,7 @@ class Home extends StatelessWidget {
                                       size: 55.0,
                                     ),
                                   ),
-                                  new Text("Gymnastic")
+                                  new Text("Calystenics")
                                 ],
                               ),
                             ),
@@ -166,7 +166,7 @@ class Home extends StatelessWidget {
                 margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
                 child: new Column(
                   children: <Widget>[
-                    new Text("FRIEND ACTIVITIES"),
+                    new Text("FRIEND ACTIVITIES".toUpperCase()),
                     new Padding(padding: EdgeInsets.only(bottom: 15.0)),
                     new Container(
                       height: 70.0,

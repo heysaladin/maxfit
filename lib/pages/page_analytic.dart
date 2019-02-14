@@ -115,17 +115,17 @@ class Analytic extends StatelessWidget {
               ),
 //                ),
               new Container(
-                // Another fixed-height child.
+                  // Another fixed-height child.
 //                  color: Colors.green,
-                height: 200.0,
-                margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
-                child: new Card(
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0),
-                  ),
-                  child: new Container(
-                  ),
-                )
+                  height: 200.0,
+                  margin:
+                      EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
+                  child: new Card(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                    ),
+                    child: new Container(),
+                  )
 //                new ClipRRect(
 //                  borderRadius: BorderRadius.circular(40.0),
 //                  child: new Container(
@@ -145,13 +145,19 @@ class Analytic extends StatelessWidget {
 //                    judul: "HTML 2"),
 //              ],
 //            ),
-              ),
+                  ),
               new Container(
                   height: 250.0,
-                  margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
+                  margin:
+                      EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
                   child: new Column(
+                    // crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
-                      new Text("Recomendation"),
+                      new Center(
+                        child: new Text(
+                          "Recomendation".toUpperCase(),
+                        ),
+                      ),
                       new Padding(padding: EdgeInsets.only(bottom: 15.0)),
                       new Container(
                         height: 70.0,
@@ -160,6 +166,16 @@ class Analytic extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: new Container(
+                            child: Center(
+                              child: new Text(
+                                "Regular Deadlift",
+                                style: new TextStyle(
+                                  fontSize: 18,
+                                ),
+                                textAlign: TextAlign.left,
+                                textDirection: TextDirection.ltr,
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -170,6 +186,16 @@ class Analytic extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: new Container(
+                            child: Center(
+                              child: new Text(
+                                "Push Up",
+                                style: new TextStyle(
+                                  fontSize: 18,
+                                ),
+                                textAlign: TextAlign.left,
+                                textDirection: TextDirection.ltr,
+                              ),
+                            ),
                           ),
                         ),
                       ),
@@ -180,62 +206,42 @@ class Analytic extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10.0),
                           ),
                           child: new Container(
+                            child: Center(
+                              child: new Text(
+                                "Running",
+                                style: new TextStyle(
+                                  fontSize: 18,
+                                ),
+                                textAlign: TextAlign.left,
+                                textDirection: TextDirection.ltr,
+                              ),
+                            ),
                           ),
                         ),
                       ),
                     ],
-                  )
-
-              ),
+                  )),
 
               new Container(
-                  height: 50.0,
-                  margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
-                  child: new ButtonTheme(
-                      minWidth: 400.0,
-                      height: 100.0,
-                      child: RaisedButton(
-
-                        color: Colors.blue,
-                    onPressed: () {},
-                    child: new Text("Edit Profile", style: new TextStyle(color: Colors.white),),
-                  )
-                  ),
+                height: 50.0,
+                margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
+                child: new ButtonTheme(
+                    minWidth: 400.0,
+                    height: 100.0,
+                    child: RaisedButton(
+                      color: Colors.blue,
+                      onPressed: () {},
+                      child: new Text(
+                        "Edit Profile".toUpperCase(),
+                        style: new TextStyle(color: Colors.white),
+                      ),
+                    )),
               ),
-
             ],
           ),
         ),
 
 //        ),
-      ),
-    );
-  }
-}
-
-/*
-new ListTutorial(gambar: "http://idrcorner.com/assets/nn/imgs/html.jpg", judul: "HTML 2"),
- */
-class ListTutorial extends StatelessWidget {
-  ListTutorial({this.gambar, this.judul});
-  final String gambar;
-  final String judul;
-  @override
-  Widget build(BuildContext context) {
-    return new Container(
-      child: new Center(
-        child: new Row(
-          children: <Widget>[
-            new Image(
-              image: new NetworkImage(gambar),
-              width: 200.0,
-            ),
-            new Text(
-              judul,
-              style: TextStyle(fontSize: 20.0),
-            ),
-          ],
-        ),
       ),
     );
   }
