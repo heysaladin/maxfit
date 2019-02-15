@@ -11,6 +11,30 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    void _alertdialog(String str) {
+      if (str.isEmpty) return;
+      AlertDialog alertDialog = new AlertDialog(
+        content: new Text(
+          str,
+          style: new TextStyle(fontSize: 20.0),
+        ),
+        actions: <Widget>[
+          new RaisedButton(
+            color: Colors.blue,
+            textColor: Colors.white,
+            child: new Text("OK"),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          )
+        ],
+      );
+      showDialog(
+        context: context,
+        child: alertDialog,
+      );
+    }
+
     return new Container(
       color: Colors.grey[250],
       child: new SingleChildScrollView(
@@ -18,7 +42,10 @@ class Home extends StatelessWidget {
           child: new Column(
             children: <Widget>[
               new Container(
-                margin: EdgeInsets.only(top: 24.0, bottom: 10.0,),
+                margin: EdgeInsets.only(
+                  top: 24.0,
+                  bottom: 10.0,
+                ),
                 color: Colors.grey[250],
                 child: new CarouselSlider(
                     items: imgList.map((i) {
@@ -70,7 +97,7 @@ class Home extends StatelessWidget {
                                   new Container(
                                     padding: EdgeInsets.all(5.0),
                                     child: new Icon(
-                                      Icons.cached,
+                                      Icons.fitness_center,
                                       size: 55.0,
                                     ),
                                   ),
@@ -92,7 +119,7 @@ class Home extends StatelessWidget {
                                   new Container(
                                     padding: EdgeInsets.all(5.0),
                                     child: new Icon(
-                                      Icons.cached,
+                                      Icons.airline_seat_recline_extra,
                                       size: 55.0,
                                     ),
                                   ),
@@ -104,7 +131,9 @@ class Home extends StatelessWidget {
                         ],
                       ),
                     ),
-                    new Padding(padding: EdgeInsets.all(5.0),),
+                    new Padding(
+                      padding: EdgeInsets.all(5.0),
+                    ),
                     new Container(
                       height: 100.0,
                       child: new Row(
@@ -124,7 +153,7 @@ class Home extends StatelessWidget {
                                   new Container(
                                     padding: EdgeInsets.all(5.0),
                                     child: new Icon(
-                                      Icons.cached,
+                                      Icons.directions_run,
                                       size: 55.0,
                                     ),
                                   ),
@@ -146,7 +175,7 @@ class Home extends StatelessWidget {
                                   new Container(
                                     padding: EdgeInsets.all(5.0),
                                     child: new Icon(
-                                      Icons.cached,
+                                      Icons.accessibility_new,
                                       size: 55.0,
                                     ),
                                   ),
@@ -162,37 +191,202 @@ class Home extends StatelessWidget {
                 ),
               ),
               new Container(
-                height: 300.0,
-                margin: EdgeInsets.symmetric(horizontal: 25.0, vertical: 25.0),
+                height: 1375.0,
+                margin: EdgeInsets.symmetric(horizontal: 5.0, vertical: 25.0),
                 child: new Column(
                   children: <Widget>[
                     new Text("FRIEND ACTIVITIES".toUpperCase()),
                     new Padding(padding: EdgeInsets.only(bottom: 15.0)),
                     new Container(
-                      height: 70.0,
+                      height: 430.0,
                       child: new Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ),
-                        child: new Container(),
+                        child: new Container(
+                          child: new Column(
+                            children: <Widget>[
+                              new ClipRRect(
+                                borderRadius: BorderRadius.circular(5.0),
+                                child: new Image(
+                                  height: 290.0,
+                                  fit: BoxFit.fitHeight,
+                                  image: new NetworkImage(
+                                    'https://games-assets.crossfit.com/a-dlsetup-shdnmmwwqhu7512jh_0.jpg',
+                                  ),
+                                ),
+                              ),
+                              new Container(
+                                padding: EdgeInsets.all(15.0),
+                                child: new Row(
+                                  children: <Widget>[
+                                    new Text(
+                                      "John Doe",
+                                      style: new TextStyle(
+                                          fontSize: 14.0, color: Colors.black),
+                                    ),
+                                    new Text(
+                                      " / 12 Martch 2019",
+                                      style: new TextStyle(
+                                          fontSize: 14.0, color: Colors.grey),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              new Container(
+                                padding: EdgeInsets.symmetric(horizontal: 15.0),
+                                child: new Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    new Text(
+                                      "Go out and shake your body... push push push...",
+                                      style: new TextStyle(
+                                          fontSize: 16.0, color: Colors.black),
+                                    ),
+                                    new Padding(
+                                      padding: EdgeInsets.all(2.0),
+                                    ),
+                                    new Text(
+                                      "#lifting #fighter #fit",
+                                      style: new TextStyle(
+                                          fontSize: 16.0, color: Colors.blue),
+                                      textAlign: TextAlign.left,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                     new Container(
-                      height: 70.0,
+                      height: 430.0,
                       child: new Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ),
-                        child: new Container(),
+                        child: new Container(
+                          child: new Column(
+                            children: <Widget>[
+                              new ClipRRect(
+                                borderRadius: BorderRadius.circular(5.0),
+                                child: new Image(
+                                  height: 290.0,
+                                  fit: BoxFit.fitHeight,
+                                  image: new NetworkImage(
+                                    'https://tredz.azureedge.net/assets/Images/UserPages/content-images/guides-reviews/size-guides/bike-size-guide/womens-specific-bikes.jpg',
+                                  ),
+                                ),
+                              ),
+                              new Container(
+                                padding: EdgeInsets.all(15.0),
+                                child: new Row(
+                                  children: <Widget>[
+                                    new Text(
+                                      "John Doe",
+                                      style: new TextStyle(
+                                          fontSize: 14.0, color: Colors.black),
+                                    ),
+                                    new Text(
+                                      " / 12 Martch 2019",
+                                      style: new TextStyle(
+                                          fontSize: 14.0, color: Colors.grey),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              new Container(
+                                padding: EdgeInsets.symmetric(horizontal: 15.0),
+                                child: new Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    new Text(
+                                      "Go out and shake your body... push push push...",
+                                      style: new TextStyle(
+                                          fontSize: 16.0, color: Colors.black),
+                                    ),
+                                    new Padding(
+                                      padding: EdgeInsets.all(2.0),
+                                    ),
+                                    new Text(
+                                      "#lifting #fighter #fit",
+                                      style: new TextStyle(
+                                          fontSize: 16.0, color: Colors.blue),
+                                      textAlign: TextAlign.left,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                     new Container(
-                      height: 70.0,
+                      height: 430.0,
                       child: new Card(
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10.0),
                         ),
-                        child: new Container(),
+                        child: new Container(
+                          child: new Column(
+                            children: <Widget>[
+                              new ClipRRect(
+                                borderRadius: BorderRadius.circular(5.0),
+                                child: new Image(
+                                  height: 290.0,
+                                  fit: BoxFit.fitHeight,
+                                  image: new NetworkImage(
+                                    'https://d1s9j44aio5gjs.cloudfront.net/2016/07/The_Benefits_of_Swimming.jpg',
+                                  ),
+                                ),
+                              ),
+                              new Container(
+                                padding: EdgeInsets.all(15.0),
+                                child: new Row(
+                                  children: <Widget>[
+                                    new Text(
+                                      "John Doe",
+                                      style: new TextStyle(
+                                          fontSize: 14.0, color: Colors.black),
+                                    ),
+                                    new Text(
+                                      " / 12 Martch 2019",
+                                      style: new TextStyle(
+                                          fontSize: 14.0, color: Colors.grey),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              new Container(
+                                padding: EdgeInsets.symmetric(horizontal: 15.0),
+                                child: new Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: <Widget>[
+                                    new Text(
+                                      "Go out and shake your body... push push push...",
+                                      style: new TextStyle(
+                                          fontSize: 16.0, color: Colors.black),
+                                    ),
+                                    new Padding(
+                                      padding: EdgeInsets.all(2.0),
+                                    ),
+                                    new Text(
+                                      "#lifting #fighter #fit",
+                                      style: new TextStyle(
+                                          fontSize: 16.0, color: Colors.blue),
+                                      textAlign: TextAlign.left,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
                       ),
                     ),
                     new Container(
@@ -203,7 +397,9 @@ class Home extends StatelessWidget {
                           height: 50.0,
                           child: FlatButton(
                             color: Colors.white,
-                            onPressed: () {},
+                            onPressed: () {
+                              _alertdialog("Under Development");
+                            },
                             child: new Text(
                               "Load More",
                               style: new TextStyle(color: Colors.black),

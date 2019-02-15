@@ -62,7 +62,117 @@ class _TrackState extends State<Track> {
         itemCount: dataJSON == null ? 0 : dataJSON.length,
         itemBuilder: (context, i) {
           return new Card(
-            child: new Text(dataJSON[i]['name']),
+            // child: new Text(dataJSON[i]['name']),
+            child: new Container(
+          padding: EdgeInsets.symmetric(vertical: 15.0),
+          // child: new Row(
+          //   children: <Widget>[
+          //     new Checkbox(
+          //       value: isChecked,
+          //       onChanged: (value) {
+          //         setState(() {
+          //           isChecked = value;
+          //           if(isChecked){
+          //             _alertdialog("Done!");
+          //           }
+          //         });
+          //       },
+          //     ),
+              child: new Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  // new Row(
+                  //   children: <Widget>[
+                  new Container(
+                    padding: EdgeInsets.symmetric(horizontal: 25.0),
+                    child: new Text(
+                      dataJSON[i]['name'],
+                      style: TextStyle(fontSize: 20.0),
+                      textAlign: TextAlign.left,
+                    ),
+                  ),
+                  //   ],
+                  // ),
+                  new Container(
+                    padding: EdgeInsets.only(top: 15.0, bottom: 5.0),
+                    child: new Row(
+                      children: <Widget>[
+                        new Container(
+                          width: 85.0,
+                          child: new Column(
+                            children: <Widget>[
+                              new Text(
+                                "wght.",
+                                style: new TextStyle(
+                                    fontSize: 12.0, color: Colors.grey),
+                              ),
+                              new Text(
+                                "0",
+                                style: new TextStyle(
+                                    fontSize: 14.0, color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ),
+                        new Container(
+                          width: 85.0,
+                          child: new Column(
+                            children: <Widget>[
+                              new Text(
+                                "reps.",
+                                style: new TextStyle(
+                                    fontSize: 12.0, color: Colors.grey),
+                              ),
+                              new Text(
+                                "0",
+                                style: new TextStyle(
+                                    fontSize: 14.0, color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ),
+                        new Container(
+                          width: 85.0,
+                          child: new Column(
+                            children: <Widget>[
+                              new Text(
+                                "dist.",
+                                style: new TextStyle(
+                                    fontSize: 12.0, color: Colors.grey),
+                              ),
+                              new Text(
+                                "2000 m",
+                                style: new TextStyle(
+                                    fontSize: 14.0, color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ),
+                        new Container(
+                          width: 85.0,
+                          child: new Column(
+                            children: <Widget>[
+                              new Text(
+                                "dur.",
+                                style: new TextStyle(
+                                    fontSize: 12.0, color: Colors.grey),
+                              ),
+                              new Text(
+                                "30 ms",
+                                style: new TextStyle(
+                                    fontSize: 14.0, color: Colors.black),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ],
+              )
+          //   ],
+          // ),
+        ),
           );
         },
       ),

@@ -1,8 +1,53 @@
 import 'package:flutter/material.dart';
+import 'package:charts_flutter/flutter.dart' as charts;
 
 class Analytic extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    void _alertdialog(String str) {
+      if (str.isEmpty) return;
+      AlertDialog alertDialog = new AlertDialog(
+        content: new Text(
+          str,
+          style: new TextStyle(fontSize: 20.0),
+        ),
+        actions: <Widget>[
+          new RaisedButton(
+            color: Colors.blue,
+            textColor: Colors.white,
+            child: new Text("OK"),
+            onPressed: () {
+              Navigator.pop(context);
+            },
+          )
+        ],
+      );
+      showDialog(
+        context: context,
+        child: alertDialog,
+      );
+    }
+
+    var data = [
+      Sales("Sun", 50),
+      Sales("Mon", 70),
+      Sales("Tue", 100),
+      Sales("Wed", 50),
+      Sales("Thu", 145),
+      Sales("Fri", 190),
+      Sales("Sat", 300),
+    ];
+
+    var series = [
+      charts.Series(
+          domainFn: (Sales sales, _) => sales.day,
+          measureFn: (Sales sales, _) => sales.sold,
+          id: 'Sales',
+          data: data)
+    ];
+
+    var chart = charts.BarChart(series);
+
     return new Container(
 //      child: new Center(
       child: new SingleChildScrollView(
@@ -124,7 +169,9 @@ class Analytic extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10.0),
                     ),
-                    child: new Container(),
+                    child: new Container(
+                      child: chart,
+                    ),
                   )
 //                new ClipRRect(
 //                  borderRadius: BorderRadius.circular(40.0),
@@ -230,7 +277,9 @@ class Analytic extends StatelessWidget {
                     height: 100.0,
                     child: RaisedButton(
                       color: Colors.blue,
-                      onPressed: () {},
+                      onPressed: () {
+                        _alertdialog("Under Development");
+                      },
                       child: new Text(
                         "Edit Profile".toUpperCase(),
                         style: new TextStyle(color: Colors.white),
@@ -245,4 +294,10 @@ class Analytic extends StatelessWidget {
       ),
     );
   }
+}
+
+class Sales {
+  final String day;
+  final int sold;
+  Sales(this.day, this.sold);
 }
