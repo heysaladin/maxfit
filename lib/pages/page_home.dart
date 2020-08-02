@@ -4,9 +4,9 @@ import 'package:carousel_slider/carousel_slider.dart';
 class Home extends StatelessWidget {
   final List<String> imgList = [
     'https://www.mensjournal.com/wp-content/uploads/mf/man_lifting_main.jpg',
-    'https://www.sixpackbags.com/wp/wp-content/uploads/2016/01/Benefits-of-Lifting-Weights-4.jpg',
+    'https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Article+Image+Update/Fitness/Benefits+of+Weight+Training/Carousel.jpg',
     'https://c.stocksy.com/a/iZ3400/z9/967058.jpg',
-    'https://fitnessfaqs.tv/wp-content/uploads/2018/08/Planche-Pro-768x432.jpg',
+    'https://madbarzpictures.blob.core.windows.net/madbarzpictures/planche.jpg',
   ];
 
   @override
